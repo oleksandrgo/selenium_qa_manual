@@ -1,5 +1,6 @@
 package pageObjects.main;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,11 +40,12 @@ public class Main {
         PageFactory.initElements(driver, this);
     }
 
-
+    @Step("Click on button sign up")
     public void clickOnButtonSignUp() {
         buttonSignUp.click();
     }
 
+    @Step("Set data {name} to field name")
     public void setFieldName(String name) {
         fieldName.sendKeys(name);
     }
@@ -69,6 +71,7 @@ public class Main {
         wait.until(ExpectedConditions.elementToBeClickable(buttonRegister)).click();
     }
 
+    @Step("Open page: {url}")
     public void openUrl(String url) {
         driver.get(url);
     }

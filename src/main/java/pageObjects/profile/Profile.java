@@ -1,5 +1,6 @@
 package pageObjects.profile;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,10 +19,12 @@ public class Profile {
         PageFactory.initElements(driver,this);
     }
 
+    @Step("Click on profile button")
     public void clickOnProfileButton(){
         profileButton.click();
     }
 
+    @Step("Get user data")
     public String getFirstLastName(){
         return profileName.getText();
     }

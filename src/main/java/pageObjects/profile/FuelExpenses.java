@@ -1,4 +1,5 @@
 package pageObjects.profile;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,16 +34,19 @@ public class FuelExpenses {
         PageFactory.initElements(driver,this);
     }
 
+    @Step("Click add expense button")
     public void clickAdAnExpenseButton(){
         wait = new WebDriverWait(driver,5);
         wait.until(ExpectedConditions.
                 elementToBeClickable(addAnExpenseButton)).click();
     }
 
+    @Step("Click fuel expenses tab")
     public void clickFuelExpensesTab(){
         fuelExpensesTab.click();
     }
 
+    @Step("Set field mileage")
     public void setFieldMileage(String mileage){
         try {
             Thread.sleep(2000);
@@ -54,6 +58,7 @@ public class FuelExpenses {
                 visibilityOf(fieldMileage)).sendKeys(mileage);
     }
 
+    @Step("Set number liters")
     public void setFieldNumberOfLiters(String liters){
         fieldNumberOfLiters.sendKeys(liters);
     }
@@ -62,6 +67,7 @@ public class FuelExpenses {
         fieldTotalCoast.sendKeys(coast);
     }
 
+    @Step("Click button add")
     public void clickButtonAdd(){
         try {
             Thread.sleep(2000);
@@ -72,7 +78,6 @@ public class FuelExpenses {
         wait.until(ExpectedConditions.visibilityOf(buttonAddExpense)).click();
 
     }
-
 
 
 }

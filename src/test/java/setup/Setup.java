@@ -1,10 +1,8 @@
 package setup;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 import pageObjects.User;
 import pageObjects.main.Main;
 import pageObjects.profile.FuelExpenses;
@@ -20,6 +18,7 @@ public class Setup {
     protected UserGarage userGarage;
     protected Profile profile;
     protected User user;
+    protected AllureListener allureListener;
 
     @BeforeClass
     public static void setupDriver(){
@@ -27,19 +26,20 @@ public class Setup {
         System.setProperty("webdriver.chrome.driver", path);
     }
 
-    @Before
+    @BeforeMethod
     public void setupTests(){
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         main = new Main(driver);
         profile = new Profile(driver);
+        allureListener = new AllureListener(driver);
         user = new User();
         fuelExpenses = new FuelExpenses(driver);
         userGarage = new UserGarage(driver);
     }
 
-    @After
+    @AfterMethod
     public void after(){
         driver.quit();
     }
