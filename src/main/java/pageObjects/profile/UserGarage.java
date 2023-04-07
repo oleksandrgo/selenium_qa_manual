@@ -51,7 +51,7 @@ public class UserGarage {
 
     @Step("Click button add")
     public void clickButtonAdd(){
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(buttonAdd)).click();
     }
 

@@ -20,11 +20,11 @@ public class Setup {
     protected User user;
     protected AllureListener allureListener;
 
-   /* @BeforeClass
+    @BeforeClass
     public static void setupDriver(){
         final String path = String.format("%s/bin/chromedriver.exe", System.getProperty("user.dir"));
         System.setProperty("webdriver.chrome.driver", path);
-    }*/
+    }
 
     @BeforeMethod
     public void setupTests(){

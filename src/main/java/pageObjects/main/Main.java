@@ -69,7 +69,7 @@ public class Main {
     }
 
     public void clickRegisterButton() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(buttonRegister)).click();
     }
 
