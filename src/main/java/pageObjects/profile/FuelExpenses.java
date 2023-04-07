@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class FuelExpenses {
     WebDriver driver;
     WebDriverWait wait;
@@ -36,7 +38,7 @@ public class FuelExpenses {
 
     @Step("Click add expense button")
     public void clickAdAnExpenseButton(){
-        wait = new WebDriverWait(driver,5);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.
                 elementToBeClickable(addAnExpenseButton)).click();
     }
@@ -53,7 +55,7 @@ public class FuelExpenses {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        wait = new WebDriverWait(driver,5);
+        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.
                 visibilityOf(fieldMileage)).sendKeys(mileage);
     }
@@ -74,7 +76,7 @@ public class FuelExpenses {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        wait = new WebDriverWait(driver,5);
+        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(buttonAddExpense)).click();
 
     }

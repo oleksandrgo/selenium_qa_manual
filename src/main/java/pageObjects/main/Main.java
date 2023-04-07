@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class Main {
     WebDriver driver;
     WebDriverWait wait;
@@ -67,7 +69,7 @@ public class Main {
     }
 
     public void clickRegisterButton() {
-        wait = new WebDriverWait(driver, 3000);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(buttonRegister)).click();
     }
 
