@@ -1,5 +1,6 @@
 package setup;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -21,13 +22,14 @@ public class Setup {
     protected AllureListener allureListener;
 
     @BeforeClass
-    public static void setupDriver(){
-        final String path = String.format("%s/bin/chromedriver.exe", System.getProperty("user.dir"));
-        System.setProperty("webdriver.chrome.driver", path);
+    public void setupDriver(){
+        /*final String path = String.format("%s/bin/chromedriver.exe", System.getProperty("user.dir"));
+        System.setProperty("webdriver.chrome.driver", path);*/
     }
 
     @BeforeMethod
     public void setupTests(){
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
