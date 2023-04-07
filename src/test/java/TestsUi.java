@@ -2,13 +2,11 @@
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import setup.AllureListener;
 import setup.Setup;
 
-@Listeners({AllureListener.class})
-public class UI extends Setup {
+
+public class TestsUi extends Setup {
 
 
     @Test(priority = 1, description = "End2end test")
