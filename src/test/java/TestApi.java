@@ -1,6 +1,5 @@
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
-import org.aspectj.lang.annotation.Before;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,12 +12,12 @@ public class TestApi {
         RestAssured.baseURI = "https://qauto.forstudy.space/api/";
     }
 
-    @Test
+    @Test(description = "Create user")
     public void createUserWithValidData() {
         createUser();
     }
 
-    @Test
+    @Test(description = "login to user profile")
     public void loginToAccount() {
         String email = createUser();
         logIn(email);
@@ -41,7 +40,7 @@ public class TestApi {
     }
 
     @Step
-    private void logIn(String email){
+    private void logIn(String email) {
         given().log().all().header("content-type", "application/json")
                 .body("{\n" +
                         "  \"email\": \" " + email + "\",\n" +
