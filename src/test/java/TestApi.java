@@ -23,7 +23,7 @@ public class TestApi {
         logIn(email);
     }
 
-    @Step
+
     private String createUser() {
         String randomEmail = randomEmail();
         given().log().all().header("content-type", "application/json")
@@ -39,7 +39,7 @@ public class TestApi {
         return randomEmail;
     }
 
-    @Step
+
     private void logIn(String email) {
         given().log().all().header("content-type", "application/json")
                 .body("{\n" +
