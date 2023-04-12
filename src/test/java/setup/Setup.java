@@ -38,8 +38,8 @@ public class Setup {
         settings = new Settings(driver);
     }
 
-   /* @AfterMethod
+    @AfterMethod
     public void after(){
         driver.quit();
-    }*/
+    }
 }
