@@ -32,6 +32,9 @@ public class TestsUi extends Setup {
         fuelExpenses.setFieldNumberOfLiters("5");
         fuelExpenses.setFieldTotalCoast("100");
         fuelExpenses.clickAdAnExpenseButton();
+        settings.clickSettingTab();
+        settings.clickRemoveAccountButton();
+        settings.clickRemoveButton();
     }
 
     @Test (priority = 2,description = "Check create user functionality")
@@ -47,6 +50,9 @@ public class TestsUi extends Setup {
         main.clickRegisterButton();
         Thread.sleep(2000);
         Assert.assertEquals(userGarage.addCarButton.getText(),"Add car", "Button is absent");
+        settings.clickSettingTab();
+        settings.clickRemoveAccountButton();
+        settings.clickRemoveButton();
     }
 
 }

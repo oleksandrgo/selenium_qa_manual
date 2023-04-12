@@ -29,6 +29,6 @@ public class User {
 
 
     private  int randomData() {
-        return (int) ((Math.random() * 10000));
+        return (int) ((Math.random() * 100000));
     }
 }

@@ -45,7 +45,8 @@ public class UserGarage {
     }
 
     @Step("Set mileage")
-    public void setMileage(String mileage){
+    public void setMileage(String mileage) throws InterruptedException {
+        Thread.sleep(1000);
         fieldMileage.sendKeys(mileage);
     }
 
