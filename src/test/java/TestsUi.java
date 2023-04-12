@@ -37,7 +37,7 @@ public class TestsUi extends Setup {
         settings.clickRemoveButton();
     }
 
-    @Test (priority = 2,description = "Check create user functionality")
+    @Test (priority = 2,description = "Create user with valid data")
     @Severity(SeverityLevel.CRITICAL)
     public void createUser() throws InterruptedException {
         main.openUrl("https://guest:welcome2qauto@qauto.forstudy.space/");
