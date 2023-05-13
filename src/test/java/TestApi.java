@@ -48,7 +48,7 @@ public class TestApi {
                         "  \"remember\": false\n" +
                         "}").
                 when().post("auth/signin").
-                then().log().all().assertThat().statusCode(201);
+                then().log().all().assertThat().statusCode(200);
     }
 
     private static String randomEmail() {

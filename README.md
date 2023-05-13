@@ -7,6 +7,6 @@
 
 Тесты можна запускати як з самого класу, а також можно запускати зі сюта. 
 Для того щоб запустити тести зі сюта необхідно виконати наступні команди в консолі
-1. UI - clean test -Dfilename=uiSuit.xml
-2. API - clean test -Dfilename=apiSuit.xml
-3. Unit - clean test -Dfilename=unitSuit.xml
+1. UI - mvn clean test -Dfilename=uiSuit.xml
+2. API - mvn clean test -Dfilename=apiSuit.xml
+3. Unit - mvn clean test -Dfilename=unitSuit.xml
