@@ -17,25 +17,28 @@ public class Main {
 
 
     @FindBy(css = ".hero-descriptor_btn")
-    WebElement buttonSignUp;
+    public WebElement buttonSignUp;
 
     @FindBy(css = "#signupName")
-    WebElement fieldName;
+    public WebElement fieldName;
 
     @FindBy(css = "#signupLastName")
-    WebElement fieldLastName;
+    public WebElement fieldLastName;
 
     @FindBy(css = "#signupEmail")
-    WebElement fieldEmail;
+    public WebElement fieldEmail;
 
     @FindBy(css = "#signupPassword")
-    WebElement fieldPassword;
+    public WebElement fieldPassword;
 
     @FindBy(css = "#signupRepeatPassword")
-    WebElement fieldReenterPassword;
+    public WebElement fieldReenterPassword;
 
     @FindBy(css = ".modal-footer .btn")
-    WebElement buttonRegister;
+    public WebElement buttonRegister;
+
+    @FindBy(css = ".invalid-feedback p")
+    public WebElement firstNameError;
 
     public Main(WebDriver driver) {
         this.driver = driver;
@@ -52,22 +55,27 @@ public class Main {
         fieldName.sendKeys(name);
     }
 
+    @Step("Set data {lastName} to the field last name")
     public void setFieldLastName(String lastName) {
         fieldLastName.sendKeys(lastName);
     }
 
+    @Step("Set data {email} to the field email")
     public void setFieldEmail(String email) {
         fieldEmail.sendKeys(email);
     }
 
+    @Step("Set data {password} to the field password")
     public void setFieldPassword(String password) {
         fieldPassword.sendKeys(password);
     }
 
+    @Step("Set data {reenterPassword} to the field reenterPassword")
     public void setFieldReenterPassword(String reenterPassword) {
         fieldReenterPassword.sendKeys(reenterPassword);
     }
 
+    @Step("Click button register")
     public void clickRegisterButton() {
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(buttonRegister)).click();
@@ -76,6 +84,11 @@ public class Main {
     @Step("Open page: {url}")
     public void openUrl(String url) {
         driver.get(url);
+    }
+
+    @Step("Get firstName error message")
+    public String getFirstNameError(){
+        return  firstNameError.getText();
     }
 
 
