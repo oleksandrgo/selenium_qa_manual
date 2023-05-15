@@ -11,7 +11,7 @@
 2. API - mvn clean test -Dfilename=apiSuit.xml
 3. Unit - mvn clean test -Dfilename=unitSuit.xml
 4. BDD - mvn clean test -Dfilename=BDD.xml
-Для того щоби запустити з класу просто настискайте RUN і все.
+Для того щоб запустити з класу просто натискайте RUN і все.
 
 Все що ван необхідно це встановити 
 1. JAVA версія 11 та вище
